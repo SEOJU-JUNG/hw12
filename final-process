@@ -1,0 +1,57 @@
+const radius = 100;
+let x, y;
+let score = 0;
+
+ let r, g, b;
+
+
+function setup() {
+createCanvas(windowWidth, windowHeight);
+  x = random(windowWidth);
+y = random(windowHeight);
+    r = random(255);
+  g = random(255);
+  b = random(255);
+}
+
+function draw() {
+  background(210);
+  fill(r, g, b);
+  noStroke();
+ellipse(x, y, radius*2, radius*2);
+  text("Score: " + score, 10, 20);
+
+   // background(127);
+
+  // strokeWeight(2);
+  // stroke(r, g, b);
+  // fill(r, g, b, 127);
+  // ellipse(360, 200, 200, 200);
+}
+
+function mousePressed() {
+  
+  let d = dist(mouseX, mouseY, 360, 200);
+  if (d < 100) {
+    r = random(255);
+    g = random(255);
+    b = random(255);
+  }
+}
+
+
+function mousePressed() {
+  
+let d = dist(mouseX, mouseY, x, y);
+ if (d < radius) {
+    x = random(windowWidth);
+    y = random(windowHeight);
+   
+   if (d < radius) {
+    x = random(windowWidth);
+    y = random(windowHeight);
+    score++;
+     
+}
+}
+}
